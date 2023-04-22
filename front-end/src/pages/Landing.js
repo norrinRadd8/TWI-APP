@@ -2,7 +2,7 @@ import "./landing.css";
 
 const Landing = () => {
   return (
-    <div className="landing-container">
+    <>
       <div
         className="landing-logo"
         style={{
@@ -11,13 +11,14 @@ const Landing = () => {
           backgroundPosition: "center",
         }}
       ></div>
+
       <div className="button-wrap">
         <button className="landing-button">GET STARTED</button>
       </div>
-      <div className="landing-text-wrap">
-        <p className="landing-text">LOGIN</p>
+      <div className="login-wrap">
+        <button className="login-button">LOGIN</button>
       </div>
-    </div>
+    </>
   );
 };
 

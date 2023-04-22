@@ -6,6 +6,14 @@
     --charcoal: #464a5e;
    }
 
+/*--- FONTS ---*/
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    font-style: normal;
+    font-weight: bold;
+    src: url('/public/fonts/BebasNeuePro-BoldItalic/BebasNeuePro-BoldItalic.ttf') format('truetype');
+  }
+
 /* --- RESETS --- */
 * {
     margin: 0;
@@ -19,34 +27,47 @@
     height: 100%;
     overflow-x: hidden;
     background-color: #1a1a1a;
+    font-family: 'Bebas Neue Pro';
   }
 
   /* --- LANDING --- */
   .landing-container {
+   
     
   }
 
   .landing-logo {
     height: 350px;
     width: 100%;
+    margin-top: 164px;
   }
 
   .button-wrap,
-  .landing-text-wrap {
+  .login-wrap {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
   }
 
   .landing-button {
     background-color: var(--green);
     border-radius: 3px;
     border: none;
-    padding: 5px 20px;
+    padding: 12px 30px;
     margin-top: 30px;
+    font-family: 'Bebas Neue Pro';
+    font-size: 32px;
   }
 
-  .landing-text {
+  .login-button {
     color: var(--white);
+    font-size: 30px;
+    margin-top: 20px;
+    border: none;
+    text-decoration: none;
+    font-family: 'Bebas Neue Pro';
+    cursor: pointer;
+    background: transparent;
 }
 
 
