@@ -1,0 +1,99 @@
+/* --- VARIABLES --- */
+:root {
+    --green: #c9f812;
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --charcoal: #464a5e;
+   }
+
+/*--- FONTS ---*/
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    font-style: normal;
+    font-weight: bold;
+    src: url('/public/fonts/BebasNeuePro-BoldItalic/BebasNeuePro-BoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/public/fonts/AktivGroteskCorp-Italic/font.ttf') format('truetype');
+}
+
+/* --- RESETS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #1a1a1a;
+    font-family: 'Bebas Neue Pro';
+  }
+
+  /* --- FORM --- */
+  .form-container {
+    padding: 0px 10px 0px 10px;
+  }
+
+  .form-para,
+  .form-name-wrap,
+  .form-lname-wrap,
+  .form-number-wrap,
+  .form-email-wrap,
+  .form-password-wrap,
+  .form-button-wrap {
+    margin-bottom: 40px;
+    font-family: 'Bebas Neue Pro';
+    color: #ffffff;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .form-para {
+    margin-top: 130px;
+    margin-bottom: 100px;
+  }
+
+  input[type="text"],[type="email"],[type="password"]  {
+    font-family: 'Aktiv Grotesk Corp';
+    font-size: 18px;
+    color: #ffffff;
+    padding: 2px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--green);
+    background-color: transparent;
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    background-color: var(--green);
+    border-radius: 3px;
+    border: none;
+    padding: 4px 30px;
+    margin-top: 90px;
+    font-family: 'Bebas Neue Pro';
+    font-size: 28px;
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+
+  .form-terms-wrap,
+  .form-privacy-wrap {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  .form-terms-wrap label,
+.form-privacy-wrap label {
+  margin-right: 10px;
+}

@@ -53,6 +53,8 @@
     margin-top: 30px;
     font-family: 'Bebas Neue Pro';
     font-size: 32px;
+    text-decoration: none;
+    color: #1a1a1a;
   }
 
   .login-button {

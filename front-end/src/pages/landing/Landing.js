@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./landing.css";
 
 const Landing = () => {
@@ -13,7 +15,9 @@ const Landing = () => {
       ></div>
 
       <div className="button-wrap">
-        <button className="landing-button">GET STARTED</button>
+        <Link className="landing-button" to="/get-started">
+          GET STARTED
+        </Link>
       </div>
       <div className="login-wrap">
         <button className="login-button">LOGIN</button>
