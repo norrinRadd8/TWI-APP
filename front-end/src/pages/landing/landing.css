@@ -30,15 +30,12 @@
     font-family: 'Bebas Neue Pro';
   }
 
-  .landing-container {
-    display: grid;
-    justify-content: center;
-    padding: 140px 0px 0px 0px;
-  }
-
   /* --- LANDING-LOGO --- */
   .landing-logo {
-    height: 350px;
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    margin-top: 70px;
   }
 
   .button-wrap,
@@ -55,7 +52,7 @@
     padding: 12px 30px;
     margin-top: 30px;
     font-family: 'Bebas Neue Pro';
-    font-size: 32px;
+    font-size: 26px;
     text-decoration: none;
     color: #1a1a1a;
   }
@@ -71,9 +68,3 @@
     background: transparent;
 }
 
-/* --- || MEDIA QUERIES FOR LARGER SCREENS --- */
-@media (min-width: 750px) {
-  .landing-logo {
-    background-repeat: no-repeat;
-  }
-}

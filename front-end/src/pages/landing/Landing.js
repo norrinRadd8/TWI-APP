@@ -4,15 +4,10 @@ import "./landing.css";
 
 const Landing = () => {
   return (
-    <div className="landing-container">
-      <div
-        className="landing-logo"
-        style={{
-          backgroundImage: "url('./images/main-logo.svg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
+    <>
+      <div className="landing-logo">
+        <img src="./images/main-logo.svg"></img>
+      </div>
 
       <div className="button-wrap">
         <Link className="landing-button" to="/get-started">
@@ -22,7 +17,7 @@ const Landing = () => {
       <div className="login-wrap">
         <button className="login-button">LOGIN</button>
       </div>
-    </div>
+    </>
   );
 };
 
