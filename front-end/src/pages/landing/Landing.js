@@ -15,7 +15,9 @@ const Landing = () => {
         </Link>
       </div>
       <div className="login-wrap">
-        <button className="login-button">LOGIN</button>
+        <Link className="login-button" to="/welcome-back">
+          LOGIN
+        </Link>
       </div>
     </>
   );
