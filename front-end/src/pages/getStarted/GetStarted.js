@@ -23,7 +23,7 @@ const GetStarted = () => {
       <button className="back-button" onClick={() => window.history.back()}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </button>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-wrap">
         <p className="form-para">
           Please add your details to setup an account.
         </p>
