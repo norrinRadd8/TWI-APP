@@ -63,25 +63,31 @@ const GetStarted = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <div className="form-terms-wrap">
-          <input
-            type="checkbox"
-            id="terms"
-            checked={termsAccepted}
-            onChange={(event) => setTermsAccepted(event.target.checked)}
-          />
-          <label htmlFor="terms">I've read the the terms and conditions</label>
-        </div>
-        <div className="form-privacy-wrap">
-          <input
-            type="checkbox"
-            id="privacy"
-            checked={privacyAccepted}
-            onChange={(event) => setPrivacyAccepted(event.target.checked)}
-          />
-          <label htmlFor="privacy">I accept the privacy policy</label>
-        </div>
+        <div className="check-container">
+          <div className="form-terms-wrap">
+            <input
+              className="checkbox-design"
+              type="checkbox"
+              id="terms"
+              checked={termsAccepted}
+              onChange={(event) => setTermsAccepted(event.target.checked)}
+            />
+            <label htmlFor="terms">
+              I've read the the terms and conditions
+            </label>
 
+            <div className="form-privacy-wrap">
+              <input
+                className="checkbox-design"
+                type="checkbox"
+                id="privacy"
+                checked={privacyAccepted}
+                onChange={(event) => setPrivacyAccepted(event.target.checked)}
+              />
+              <label htmlFor="privacy">I accept the privacy policy</label>
+            </div>
+          </div>
+        </div>
         <div className="form-button-wrap">
           <button type="submit">Create Account</button>
         </div>

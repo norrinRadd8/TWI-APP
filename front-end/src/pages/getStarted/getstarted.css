@@ -57,8 +57,8 @@
   }
 
   .form-para {
-    margin-top: 130px;
-    margin-bottom: 100px;
+    margin-top: 110px;
+    margin-bottom: 50px;
   }
 
   input[type="text"],[type="email"],[type="password"]  {
@@ -78,22 +78,57 @@
     border-radius: 3px;
     border: none;
     padding: 4px 30px;
-    margin-top: 90px;
+    margin-top: 65px;
     font-family: 'Bebas Neue Pro';
     font-size: 28px;
     text-decoration: none;
     color: #1a1a1a;
   }
 
-  .form-terms-wrap,
-  .form-privacy-wrap {
+input#terms[type="checkbox"] {
+  border: 2px solid var(--green);
+  background-color: transparent;
+}
+  
+.check-container {
     display: flex;
     justify-content: center;
+    margin-top: 70px;
+}
+
+.checkbox-design {
+    display: none;
+      }
+      
+      .checkbox-design + label:before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #c9f812;
+        background-color: transparent;
+        margin-right: 10px;
+        position: relative;
+        top: 4px;
+      }
+      .checkbox-design:checked + label:before {
+        content: "\2713"; /* use tick icon */
+        font-size: 12px;
+        color: white;
+        text-align: center;
+        line-height: 18px;
+        position: relative;
+        top: -2px;
+      }
+      
+
+  .form-terms-wrap,
+  .form-privacy-wrap {
     color: #ffffff;
     font-size: 20px;
   }
 
   .form-terms-wrap label,
 .form-privacy-wrap label {
-  margin-right: 10px;
+  margin-left: 10px;
 }
