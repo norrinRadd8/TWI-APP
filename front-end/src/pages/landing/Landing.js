@@ -4,7 +4,7 @@ import "./landing.css";
 
 const Landing = () => {
   return (
-    <>
+    <div className="landing-container">
       <div
         className="landing-logo"
         style={{
@@ -22,7 +22,7 @@ const Landing = () => {
       <div className="login-wrap">
         <button className="login-button">LOGIN</button>
       </div>
-    </>
+    </div>
   );
 };
 

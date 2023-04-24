@@ -1,6 +1,8 @@
 import "./getstarted.css";
 
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const GetStarted = () => {
   const [firstName, setFirstName] = useState("");
@@ -18,6 +20,9 @@ const GetStarted = () => {
 
   return (
     <div className="form-container">
+      <button className="back-button" onClick={() => window.history.back()}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </button>
       <form onSubmit={handleSubmit}>
         <p className="form-para">
           Please add your details to setup an account.
