@@ -51,8 +51,8 @@
     padding: 1.2rem;
   }
   
-  .back-button i {
-    margin-right: 0.5rem;
+  .back-button  {
+    margin-left: 1.5rem;
   }
   
   .back-button:hover {
