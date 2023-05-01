@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <>
       <div className="landing-logo">
-        <img src="./images/main-logo.svg"></img>
+        <img src="./images/main-logo.svg" alt=""></img>
       </div>
 
       <div className="button-wrap">
