@@ -1,36 +1,5 @@
-/* --- VARIABLES --- */
-:root {
-    --green: #c9f812;
-    --black: #1a1a1a;
-    --white: #ffffff;
-    --charcoal: #464a5e;
-   }
 
-/*--- FONTS ---*/
-@font-face {
-    font-family: 'Bebas Neue Pro';
-    font-style: normal;
-    font-weight: bold;
-    src: url('/public/fonts/BebasNeuePro-BoldItalic/BebasNeuePro-BoldItalic.ttf') format('truetype');
-  }
-
-/* --- RESETS --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html,
-  body,
-  #root {
-    height: 100%;
-    overflow-x: hidden;
-    background-color: #1a1a1a;
-    font-family: 'Bebas Neue Pro';
-  }
-
-  /* --- LANDING-LOGO --- */
+/* --- LANDING-LOGO --- */
   .landing-logo {
     display: flex;
     justify-content: center;

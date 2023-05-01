@@ -1,3 +1,4 @@
+import "../../index.css";
 import "./getstarted.css";
 
 import React, { useState } from "react";
@@ -19,7 +20,7 @@ const GetStarted = () => {
   };
 
   return (
-    <div className="form-container">
+    <>
       <button className="back-button" onClick={() => window.history.back()}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </button>
@@ -97,7 +98,7 @@ const GetStarted = () => {
           <button type="submit">Create Account</button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 

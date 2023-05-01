@@ -1,4 +1,5 @@
 import "./welcomeback.css";
+import "../../index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -18,9 +19,9 @@ const WelcomeBack = () => {
       <button className="back-button" onClick={() => window.history.back()}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </button>
-      <div className="welcome-form-wrap">
+      <div className="form-wrap">
         <form onSubmit={handleSubmit}>
-          <p className="welcome-form-para">Welcome back!</p>
+          <p className="form-para welcome-form-para">Welcome back!</p>
           <div className="form-name-wrap">
             <input
               className="form-user-name"
