@@ -2,4 +2,28 @@
 .dash-board h2 {
     color: #ffffff;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.grid-wrap {
+    padding: 40px;
+    display: grid;
+    grid-template-rows: .3fr .3fr .3fr;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+}
+
+.grid-wrap h3 {
+    color: var(--white);
 }
