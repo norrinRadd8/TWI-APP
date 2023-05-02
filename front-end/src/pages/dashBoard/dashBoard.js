@@ -1,7 +1,25 @@
 import "./dashboard.css";
 import Nav from "../../components/nav";
+import { useEffect, useState } from "react";
+
+// components
+import WorkoutDetails from "../../components/WorkoutDetails";
 
 const Dashboard = () => {
+  const [workouts, setWorkouts] = useState(null);
+
+  useEffect(() => {
+    const fetchWorkouts = async () => {
+      const response = await fetch("/api/workouts"); //on production make sure every request is pointed to the correct end-points
+      const json = await response.json();
+
+      if (response.ok) {
+        setWorkouts(json);
+      }
+    };
+    fetchWorkouts();
+  }, []);
+
   return (
     <div className="dash-board">
       <Nav />
@@ -9,9 +27,12 @@ const Dashboard = () => {
       <>
         <div className="grid-container">
           <div className="grid-wrap">
-            <h3>Article 1</h3>
-            <h3>Article 1</h3>
-            <h3>Article 1</h3>
+            <div className="workouts">
+              {workouts &&
+                workouts.map((workout) => (
+                  <WorkoutDetails key={workout._id} workout={workout} />
+                ))}
+            </div>
           </div>
           <div className="grid-wrap">
             <h3>Article 2</h3>
