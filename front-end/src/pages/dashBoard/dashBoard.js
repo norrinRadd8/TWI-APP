@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 // components
 import WorkoutDetails from "../../components/WorkoutDetails";
+import WorkoutForm from "../../components/WorkoutForm";
 
 const Dashboard = () => {
   const [workouts, setWorkouts] = useState(null);
@@ -25,16 +26,18 @@ const Dashboard = () => {
       <Nav />
       <h2>Dashboard</h2>
       <>
-        <div className="grid-container">
-          <div className="grid-wrap">
-            <div className="workouts">
-              {workouts &&
-                workouts.map((workout) => (
-                  <WorkoutDetails key={workout._id} workout={workout} />
-                ))}
-            </div>
+        {/* <div className="grid-container">
+          <div className="grid-wrap"> */}
+        <div className="dash-container">
+          <div className="workouts">
+            {workouts &&
+              workouts.map((workout) => (
+                <WorkoutDetails key={workout._id} workout={workout} />
+              ))}
           </div>
-          <div className="grid-wrap">
+          {/* </div> */}
+          <WorkoutForm />
+          {/* <div className="grid-wrap">
             <h3>Article 2</h3>
             <h3>Article 2</h3>
             <h3>Article 2</h3>
@@ -68,7 +71,8 @@ const Dashboard = () => {
             <h3>Article 8</h3>
             <h3>Article 8</h3>
             <h3>Article 8</h3>
-          </div>
+          </div> */}
+          {/* </div> */}
         </div>
       </>
     </div>
