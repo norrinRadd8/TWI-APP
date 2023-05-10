@@ -4,6 +4,7 @@
     --black: #1a1a1a;
     --white: #ffffff;
     --charcoal: #464a5e;
+    --error: #e7195a;
    }
 
 /*--- FONTS ---*/
@@ -71,6 +72,7 @@
       display: flex;
       justify-content: center;
     }
+    
 
     input[type="text"],[type="email"],[type="password"]  {
       font-family: 'Aktiv Grotesk Corp';
@@ -82,6 +84,9 @@
       border-bottom: 1px solid var(--green);
       background-color: transparent;
       padding: 10px;
+    }
+    input.error {
+      border: 1px solid var(--error);
     }
   
     button[type="submit"] {
