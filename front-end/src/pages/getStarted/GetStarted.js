@@ -2,6 +2,8 @@ import "../../index.css";
 import "./getstarted.css";
 
 import React, { useState } from "react";
+import { useGetStarted } from "../../context/hooks/useGetStarted";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,12 +13,31 @@ const GetStarted = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [termsAccepted, setTermsAccepted] = useState(false);
-  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState("");
+  const [privacyAccepted, setPrivacyAccepted] = useState("");
+  const { getstarted, error, isLoading } = useGetStarted();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Handle form submission
+    await getstarted(
+      firstName,
+      lastName,
+      phoneNumber,
+      email,
+      password,
+      termsAccepted,
+      privacyAccepted
+    );
+    console.log(
+      firstName,
+      lastName,
+      phoneNumber,
+      email,
+      password,
+      termsAccepted,
+      privacyAccepted
+    );
   };
 
   return (
@@ -78,7 +99,7 @@ const GetStarted = () => {
               checked={termsAccepted}
               onChange={(event) => setTermsAccepted(event.target.checked)}
             />
-            <label htmlFor="terms">
+            <label htmlFor="terms" className="tandcs">
               I've read the the terms and conditions
             </label>
 
@@ -90,12 +111,17 @@ const GetStarted = () => {
                 checked={privacyAccepted}
                 onChange={(event) => setPrivacyAccepted(event.target.checked)}
               />
-              <label htmlFor="privacy">I accept the privacy policy</label>
+              <label htmlFor="privacy" className="tandcs">
+                I accept the privacy policy
+              </label>
             </div>
+            {error && <div className="error">{error}</div>}
           </div>
         </div>
         <div className="form-button-wrap">
-          <button type="submit">Create Account</button>
+          <button disabled={isLoading} type="submit">
+            Create Account
+          </button>
         </div>
       </form>
     </>

@@ -12,7 +12,11 @@ input#terms[type="checkbox"] {
 .check-container {
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 50px;
+}
+
+.tandcs {
+  margin-bottom: 0px;
 }
 
 .checkbox-design {

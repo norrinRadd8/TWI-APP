@@ -70,7 +70,7 @@ label, input {
     display: block;
 }
 
-label, h3 {
+label, .create h3 {
     color: var(--white);
     margin-bottom: 20px;
 }

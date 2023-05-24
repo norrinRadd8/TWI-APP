@@ -41,6 +41,7 @@
     /* --- FORM --- */
     .form-wrap {
       padding: 0px 54px;
+      margin: 40px auto;
     }
   
     .back-button {
@@ -94,20 +95,31 @@
       border-radius: 3px;
       border: none;
       padding: 4px 30px;
-      margin-top: 65px;
+      margin-top: 50px;
       font-family: 'Bebas Neue Pro';
       font-size: 28px;
       text-decoration: none;
       color: #1a1a1a;
     }
+/*--- ERROR --- */
+div.error {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--green);
+  color: #9d0505;
+  border-radius: 4px;
+  margin: 20px 0;
+}
 
 /* --- || MEDIA QUERIES FOR LARGER SCREENS --- */
   @media (min-width: 750px) {
 
     /* --- FORM ---*/
     .form-wrap {
-        display: grid;
-        padding: 0px 50px;
+      margin: 0px auto;
+      max-width: 600px;
     }
     .form-button-wrap {
         display: flex;
