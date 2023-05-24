@@ -4,14 +4,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import React, { useState } from "react";
+import { useLogin } from "../../context/hooks/useLogin";
 
 const WelcomeBack = () => {
-  const [userName, setuserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     // Handle form submission
+    await login(email, password);
   };
 
   return (
@@ -27,8 +30,8 @@ const WelcomeBack = () => {
               className="form-user-name"
               type="text"
               placeholder="example@gmail.com"
-              value={userName}
-              onChange={(event) => setuserName(event.target.value)}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
             />
           </div>
           <div className="form-password-wrap">
@@ -39,8 +42,13 @@ const WelcomeBack = () => {
               onChange={(event) => setPassword(event.target.value)}
             />
           </div>
+
+          <div>{error && <div className="error">{error}</div>}</div>
+
           <div className="form-button-wrap">
-            <button type="submit">Login</button>
+            <button type="submit" disabled={isLoading}>
+              Login
+            </button>
           </div>
         </form>
       </div>
