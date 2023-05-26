@@ -2,6 +2,7 @@ import "./dashboard.css";
 import Nav from "../../components/nav";
 import { useEffect } from "react";
 import { useWorkoutsContext } from "../../context/hooks/useWorkoutsContext";
+import { useAuthContext } from "../../context/hooks/useAuthContext";
 
 // components
 import WorkoutDetails from "../../components/WorkoutDetails";
@@ -9,18 +10,26 @@ import WorkoutForm from "../../components/WorkoutForm";
 
 const Dashboard = () => {
   const { workouts, dispatch } = useWorkoutsContext();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("/api/workouts"); //on production make sure every request is pointed to the correct end-points
+      const response = await fetch("/api/workouts", {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }); //on production make sure every request is pointed to the correct end-points
       const json = await response.json();
 
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
       }
     };
-    fetchWorkouts();
-  }, [dispatch]);
+
+    if (user) {
+      fetchWorkouts();
+    }
+  }, [dispatch, user]);
 
   return (
     <div className="dash-board">
