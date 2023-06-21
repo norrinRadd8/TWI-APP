@@ -1,0 +1,95 @@
+.workout-container {
+    display: grid;
+    grid-template-columns: 1.2fr .6fr;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 10px 0 10px;
+    height: 680px; 
+    overflow: auto; 
+}
+
+.workout-container::-webkit-scrollbar {
+    width: 0.5em; 
+    background-color: transparent;
+  }
+  
+  .workout-container::-webkit-scrollbar-thumb {
+    background-color: #1a1a1a;
+    border-radius: 0.25em;
+  }
+  
+  .workout-container::-webkit-scrollbar-thumb:hover {
+    background-color: #1a1a1a;
+  }
+
+.workout-details {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* border-bottom: 1px solid var(--green);
+    border-right: 1px solid var(--green); */
+    border-radius: 4px;
+    margin: 20px auto;
+    position: relative;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(201,248,18,0.8);
+}
+
+.workout-details h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: var(--white)
+}
+
+.workout-details p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #d2e2ed;
+}
+
+.workout-details span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    padding: 6px;
+    border-radius: 50%;
+    color: #333; 
+}
+
+/* --- NEW WORKOUT FORM --- */
+
+.create {
+    margin-top: 12px;
+    padding: 8px;
+   
+}
+
+label, input {
+    display: block;
+}
+
+label, .create h3 {
+    color: var(--white);
+    margin-bottom: 42px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Aktiv Grotesk Corp';
+}
+
+form button {
+    background-color: var(--green);
+    border: 0;
+    color: #1a1a1a;
+    padding: 10px;
+    font-family: 'Bebas Neue Pro';
+    border-radius: 4px;
+    cursor: pointer;
+}

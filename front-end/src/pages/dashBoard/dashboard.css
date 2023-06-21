@@ -1,3 +1,40 @@
+.container-home, 
+.container-plans, 
+.container-progress, 
+.container-workouts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dashbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 0px 30px;
+  }
+  
+  .dashbar-header {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .dashbar-email {
+    display:flex;
+    justify-content: flex-end;
+  }
+
+  .dashbar-container button {
+    margin-left: 1rem;
+  }
+  
+
+.dash-board {
+    display: grid;
+    align-items: center;
+}
 
 .dash-board h2 {
     color: #ffffff;
@@ -6,93 +43,73 @@
     justify-content: center;
 }
 
-/* .grid-container {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 8px;
-    color: #ffffff;
-} */
-
 .dash-container {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 100px;
-    padding: 20px;
+    grid-template-columns: .8fr .8fr;
+    justify-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    padding: 0 30px 0 30px;
+    
 }
 
- .workout-details {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* border-bottom: 1px solid var(--green);
-    border-right: 1px solid var(--green); */
-    border-radius: 4px;
-    margin: 20px auto;
-    position: relative;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(201,248,18,0.8);
-}
-
-.workout-details h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.2em;
-    color: var(--white)
-}
-
-.workout-details p {
-    margin: 0;
-    font-size: 1.2em;
-    color: #d2e2ed;
-}
-
-.workout-details span {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    background-color: #ffffff;
-    padding: 6px;
-    border-radius: 50%;
-    color: #333; 
-}
-
-/* .grid-wrap h3 {
-    color: var(--white);
-}
-
-.workouts {
-    font-size: 20px;
-    line-height: 32px;
-} */
-
-/* --- new workout form --- */
-label, input {
-    display: block;
-}
-
-label, .create h3 {
-    color: var(--white);
-    margin-bottom: 20px;
-}
-
-input {
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 100%;
+.dash-section-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--green);
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: 'Aktiv Grotesk Corp';
+    border-radius: 8px;
+    width: 160px;
+    height: 160px;
+
 }
 
-form button {
-    background-color: var(--green);
-    border: 0;
-    color: #1a1a1a;
-    padding: 10px;
-    font-family: 'Bebas Neue Pro';
-    border-radius: 4px;
-    cursor: pointer;
+.icon {
+    width: 70px;
+    height: 70px; 
+
 }
 
+.icons {
+    width: 50px;
+    height: 50px;
+}
+
+.dash-section-title {
+    margin-top: 10px;
+    text-align: center;
+    color: var(--white);
+    font-size: x-large;
+}
+
+
+.dash-menu-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    justify-content: space-between;
+    padding: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+}
+
+
+ 
+
+@media (min-width: 750px) {
+
+  
+
+      /* --- DASH CONTAINER --- */
+      .dash-container {
+        display: grid;
+        grid-template-columns: .8fr .8fr .8fr;
+        justify-items: center;
+        margin-top: 100px;
+        padding: 0 35px 0 17px;
+        
+    }
+}

@@ -34,5 +34,24 @@ export const useLogin = () => {
       setIsLoading(false);
     }
   };
+
+  // const getFirstname = async () => {
+  //   setIsLoading(true);
+  //   setError(null);
+
+  //   const response = await fetch("/api/user/login", {
+  //     method: "GET",
+  //     headers: { "Content-Type": "application/json" },
+  //   });
+  //   const json = await response.json();
+
+  //   if (response.ok) {
+  //     // update the auth context with firstname
+  //     dispatch({ type: "UPDATE_FIRSTNAME", payload: json.firstname });
+
+  //     setIsLoading(false);
+  //   }
+  // };
   return { login, isLoading, error };
+  // return { login, isLoading, error, getFirstname };
 };
