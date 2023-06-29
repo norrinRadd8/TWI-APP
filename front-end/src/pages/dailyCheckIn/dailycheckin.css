@@ -1,0 +1,41 @@
+
+.daily-checkin-container {
+    padding: 20px;
+}
+
+.option-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .option input[type="radio"] {
+    display: none;
+  }
+  
+  .option span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #eaeaea;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .option input[type="radio"]:checked + span {
+    background-color: var(--green);
+    color: #333;
+  }
+  

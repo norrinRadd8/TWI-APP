@@ -14,7 +14,7 @@ const Dashboard = () => {
 
       <div className="dash-container">
         <div className="dash-section-one">
-          <Link to="/work-outs">
+          <Link to="/daily-checkin">
             <img
               src="./images/icons/icons8-check-inbox-80.png"
               alt="Workouts"

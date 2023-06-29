@@ -7,6 +7,7 @@ import GetStarted from "./pages/getStarted/GetStarted";
 import WelcomeBack from "./pages/welcomeBack/WelcomeBack";
 import Dashboard from "./pages/dashBoard/dashBoard";
 import WorkOuts from "./pages/workOuts/workOutsPage";
+import DailyCheckIn from "./pages/dailyCheckIn/DailyCheckIn";
 
 const App = () => {
   const { user } = useAuthContext();
@@ -32,6 +33,10 @@ const App = () => {
         <Route
           path="/work-outs"
           element={user ? <WorkOuts /> : <Navigate to="/welcome-back" />}
+        />
+        <Route
+          path="/daily-checkin"
+          element={user ? <DailyCheckIn /> : <Navigate to="/daily-checkin" />}
         />
       </Routes>
     </BrowserRouter>
