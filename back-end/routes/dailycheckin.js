@@ -1,32 +1,20 @@
 const express = require("express");
 const {
-  createDailyCheckIn,
-  getDailyCheckIns,
-  getDailyCheckIn,
-  deleteDailyCheckIn,
-  updateDailyCheckIn,
+  createDailyCheckin,
+  getDailyCheckin,
 } = require("../controllers/dailyCheckInController");
 
 const requireAuth = require("../middleware/requireAuth");
 
 const router = express.Router();
 
-// require auth for all daily check-in routes
+// Require auth for all daily check-in routes
 router.use(requireAuth);
 
-// GET all daily check-ins
-router.get("/", getDailyCheckIns);
-
-// GET a single daily check-in
-router.get("/:id", getDailyCheckIn);
-
 // POST a new daily check-in
-router.post("/", createDailyCheckIn);
+router.post("/", createDailyCheckin);
 
-// DELETE a daily check-in
-router.delete("/:id", deleteDailyCheckIn);
-
-// UPDATE a daily check-in
-router.patch("/:id", updateDailyCheckIn);
+// GET the latest daily check-in
+router.get("/", getDailyCheckin);
 
 module.exports = router;

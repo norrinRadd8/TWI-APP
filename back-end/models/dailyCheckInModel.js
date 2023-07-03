@@ -2,13 +2,33 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const dailyCheckInSchema = new Schema(
+const dailyCheckinSchema = new Schema(
   {
-    question: {
-      type: String,
+    sleepQuality: {
+      type: Number,
       required: true,
+      min: 1,
+      max: 10,
     },
-    rating: {
+    stress: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 10,
+    },
+    fatigue: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 10,
+    },
+    energy: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 10,
+    },
+    muscleSoreness: {
       type: Number,
       required: true,
       min: 1,
@@ -19,9 +39,7 @@ const dailyCheckInSchema = new Schema(
       required: true,
     },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
-module.exports = mongoose.model("DailyCheckIn", dailyCheckInSchema);
+module.exports = mongoose.model("DailyCheckin", dailyCheckinSchema);

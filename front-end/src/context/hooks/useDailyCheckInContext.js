@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DailyCheckInContext } from "../DailyCheckInContext";
+import { DailyCheckInContext } from "../CheckinContext";
 
 export const useDailyCheckInContext = () => {
   const context = useContext(DailyCheckInContext);

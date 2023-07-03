@@ -1,45 +1,38 @@
+import React from "react";
 import { useDailyCheckInContext } from "../context/hooks/useDailyCheckInContext";
-import { useAuthContext } from "../context/hooks/useAuthContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
-const DailyCheckInDetails = ({ checkIn }) => {
+const DailyCheckInDetails = ({ dailyCheckIn }) => {
   const { dispatch } = useDailyCheckInContext();
-  const { user } = useAuthContext();
 
-  const handleClick = async () => {
-    if (!user) {
-      return;
-    }
-  };
   return (
-    <div className="checkin-details">
+    <div className="daily-check-in-details">
       <h4>Daily Check-In</h4>
       <p>
         <strong>Sleep Quality: </strong>
-        {checkIn.sleepQuality}
+        {dailyCheckIn.sleepQuality}
       </p>
       <p>
         <strong>Stress: </strong>
-        {checkIn.stress}
+        {dailyCheckIn.stress}
       </p>
       <p>
         <strong>Fatigue: </strong>
-        {checkIn.fatigue}
+        {dailyCheckIn.fatigue}
       </p>
       <p>
         <strong>Energy: </strong>
-        {checkIn.energy}
+        {dailyCheckIn.energy}
       </p>
       <p>
         <strong>Muscle Soreness: </strong>
-        {checkIn.muscleSoreness}
+        {dailyCheckIn.muscleSoreness}
       </p>
       <p>
-        {formatDistanceToNow(new Date(checkIn.createdAt), { addSuffix: true })}
+        {formatDistanceToNow(new Date(dailyCheckIn.createdAt), {
+          addSuffix: true,
+        })}
       </p>
-      <span className="material-symbols-outlined" onClick={handleClick}>
-        delete
-      </span>
     </div>
   );
 };

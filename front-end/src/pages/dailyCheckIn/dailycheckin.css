@@ -1,4 +1,35 @@
+.check-in {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
+.check-in h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.check-in label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.radio-group label {
+  margin-right: 10px;
+}
+
+
+
+
+
+/* 
 .daily-checkin-container {
     padding: 20px;
 }
@@ -38,4 +69,4 @@
     background-color: var(--green);
     color: #333;
   }
-  
+   */
