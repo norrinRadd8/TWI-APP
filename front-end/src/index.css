@@ -101,6 +101,7 @@
       text-decoration: none;
       color: #1a1a1a;
     }
+    
 /*--- ERROR --- */
 div.error {
   display: flex;

@@ -49,7 +49,7 @@
     justify-items: center;
     gap: 15px;
     margin-top: 50px;
-    padding: 0 30px 0 30px;
+    padding: 0 30px 45px 20px;
     
 }
 
@@ -85,23 +85,16 @@
 
 
 .dash-menu-section {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
-    justify-content: space-between;
     padding: 30px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     background-color: #1a1a1a;
+    width: 100%;
 }
-
-
  
-
 @media (min-width: 750px) {
-
-  
 
       /* --- DASH CONTAINER --- */
       .dash-container {
@@ -109,7 +102,12 @@
         grid-template-columns: .8fr .8fr .8fr;
         justify-items: center;
         margin-top: 100px;
-        padding: 0 35px 0 17px;
-        
+        padding: 0 35px 0 17px;    
+    }
+
+    .dash-menu-section {
+      display: grid;
+      justify-content: center;
+      width: 100%;
     }
 }

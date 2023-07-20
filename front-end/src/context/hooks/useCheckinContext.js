@@ -12,6 +12,7 @@ export const checkinReducer = (state, action) => {
       return {
         checkIns: [action.payload, ...state.checkIns],
       };
+
     default:
       return state;
   }

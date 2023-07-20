@@ -1,72 +1,76 @@
-.check-in {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+.checkin-container {
+  display: grid;
+  padding: 0 20px 0 20px;
+  height: 680px;
 }
 
-.check-in h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.check-in-input {
+  padding: 5px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* This will turn the icon white */
+}
+
+/* Calendar icon for Mozilla-based browsers (e.g., Firefox) */
+input[type="date"]::-moz-calendar-picker-indicator {
+  filter: invert(1); /* This will turn the icon white */
 }
 
 .check-in label {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .radio-group {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;
+  justify-content: space-evenly;
 }
 
-.radio-group label {
-  margin-right: 10px;
+.radio-button-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-
-
-
-/* 
-.daily-checkin-container {
-    padding: 20px;
+.radio-button-label input[type="radio"] {
+  opacity: 0;
+  position: absolute;
 }
 
-.option-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .option input[type="radio"] {
-    display: none;
-  }
-  
-  .option span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #eaeaea;
-    color: #333;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .option input[type="radio"]:checked + span {
-    background-color: var(--green);
-    color: #333;
-  }
-   */
+.radio-button-label .radio-button-custom {
+  display: inline-block;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  width: 22px; 
+  height: 22px; 
+  line-height: 20px; 
+  text-align: center; 
+  cursor: pointer;
+}
+
+.radio-button-custom {
+  padding: 0px;
+}
+
+.radio-button-label input[type="radio"]:checked + .radio-button-custom {
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.check-in-btn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.check-in-btn.disabled {
+  opacity: 0.6; 
+  cursor: not-allowed; 
+}

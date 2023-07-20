@@ -34,6 +34,15 @@ const dailyCheckinSchema = new Schema(
       min: 1,
       max: 10,
     },
+    hoursOfSleep: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+    checkInDate: {
+      type: Date,
+      required: true,
+    },
     user_id: {
       type: String,
       required: true,

@@ -9,11 +9,21 @@ const CheckinForm = () => {
   const [fatigue, setFatigue] = useState("");
   const [energy, setEnergy] = useState("");
   const [muscleSoreness, setMuscleSoreness] = useState("");
+  const [hoursOfSleep, setHoursOfSleep] = useState("");
+  const [checkInDate, setCheckInDate] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (submitted) {
+      setError(
+        "You have already submitted. Hit the home button and check in again."
+      );
+      return;
+    }
 
     if (!user) {
       setError("You must be logged in");
@@ -26,6 +36,8 @@ const CheckinForm = () => {
       fatigue,
       energy,
       muscleSoreness,
+      hoursOfSleep,
+      checkInDate,
     };
 
     try {
@@ -44,6 +56,7 @@ const CheckinForm = () => {
         console.log("Check-in submitted successfully");
         setError(null);
         setSuccess(true);
+        setSubmitted(true);
       } else {
         setError(json.error);
         setSuccess(false);
@@ -57,12 +70,34 @@ const CheckinForm = () => {
 
   return (
     <form className="check-in" onSubmit={handleSubmit}>
-      <h3>Daily Check-In</h3>
+      <div className="form-group">
+        <label htmlFor="checkInDate">Check-In Date:</label>
+        <input
+          type="date"
+          name="checkInDate"
+          value={checkInDate}
+          onChange={(e) => setCheckInDate(e.target.value)}
+          required
+          className="check-in-input"
+        />
+      </div>
 
-      <label>Sleep Quality:</label>
+      <div className="form-group">
+        <label htmlFor="hoursOfSleep">Hours of Sleep:</label>
+        <input
+          type="number"
+          name="hoursOfSleep"
+          value={hoursOfSleep}
+          onChange={(e) => setHoursOfSleep(Math.max(0, e.target.value))}
+          required
+          className="check-in-input"
+        />
+      </div>
+
+      <label>Sleep Quality: (1 = Awful & 10 = Brilliant)</label>
       <div className="radio-group">
         {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
-          <label key={value}>
+          <label key={value} className="radio-button-label">
             <input
               type="radio"
               name="sleepQuality"
@@ -70,15 +105,15 @@ const CheckinForm = () => {
               checked={sleepQuality === String(value)}
               onChange={(e) => setSleepQuality(e.target.value)}
             />
-            {value}
+            <span className="radio-button-custom">{value}</span>
           </label>
         ))}
       </div>
 
-      <label>Stress:</label>
+      <label>Stress: (1 = Stressed & 10 = Relaxed)</label>
       <div className="radio-group">
         {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
-          <label key={value}>
+          <label key={value} className="radio-button-label">
             <input
               type="radio"
               name="stress"
@@ -86,15 +121,15 @@ const CheckinForm = () => {
               checked={stress === String(value)}
               onChange={(e) => setStress(e.target.value)}
             />
-            {value}
+            <span className="radio-button-custom">{value}</span>
           </label>
         ))}
       </div>
 
-      <label>Fatigue:</label>
+      <label>Fatigue: (1 = Lethargic & 10 = Raring To Go)</label>
       <div className="radio-group">
         {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
-          <label key={value}>
+          <label key={value} className="radio-button-label">
             <input
               type="radio"
               name="fatigue"
@@ -102,15 +137,15 @@ const CheckinForm = () => {
               checked={fatigue === String(value)}
               onChange={(e) => setFatigue(e.target.value)}
             />
-            {value}
+            <span className="radio-button-custom">{value}</span>
           </label>
         ))}
       </div>
 
-      <label>Energy:</label>
+      <label>Energy: (1 = Lifeless & 10 = Bouncing)</label>
       <div className="radio-group">
         {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
-          <label key={value}>
+          <label key={value} className="radio-button-label">
             <input
               type="radio"
               name="energy"
@@ -118,15 +153,15 @@ const CheckinForm = () => {
               checked={energy === String(value)}
               onChange={(e) => setEnergy(e.target.value)}
             />
-            {value}
+            <span className="radio-button-custom">{value}</span>
           </label>
         ))}
       </div>
 
-      <label>Muscle Soreness:</label>
+      <label>Muscle Soreness: (1 = None & 10 = Very Sore)</label>
       <div className="radio-group">
         {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
-          <label key={value}>
+          <label key={value} className="radio-button-label">
             <input
               type="radio"
               name="muscleSoreness"
@@ -134,12 +169,18 @@ const CheckinForm = () => {
               checked={muscleSoreness === String(value)}
               onChange={(e) => setMuscleSoreness(e.target.value)}
             />
-            {value}
+            <span className="radio-button-custom">{value}</span>
           </label>
         ))}
       </div>
 
-      <button>Submit</button>
+      <button
+        className={`check-in-btn ${submitted ? "disabled" : ""}`}
+        disabled={submitted}
+      >
+        Submit
+      </button>
+
       {error && <div className="error">{error}</div>}
       {success && (
         <div className="success">Check-in submitted successfully!</div>

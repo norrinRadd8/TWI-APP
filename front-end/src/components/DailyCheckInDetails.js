@@ -29,6 +29,15 @@ const DailyCheckInDetails = ({ dailyCheckIn }) => {
         {dailyCheckIn.muscleSoreness}
       </p>
       <p>
+        <strong>Hours of Sleep: </strong>
+        {dailyCheckIn.hoursOfSleep}
+      </p>
+      <p>
+        <strong>Check-In Date: </strong>
+        {new Date(dailyCheckIn.checkInDate).toLocaleDateString()}
+      </p>
+      <p>
+        <strong>Check-In Date: </strong>
         {formatDistanceToNow(new Date(dailyCheckIn.createdAt), {
           addSuffix: true,
         })}
